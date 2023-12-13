@@ -1,0 +1,54 @@
+def f1():
+   print("List of students who play both cricket and badminton",{i for i in groupA if i in groupB})
+   
+   
+def f2():
+   
+    C=[i for i in groupA if not i in groupB]
+    D=[i for i in groupB if not i in groupA]
+    print("List of students who play either cricket or badminton but not both",{i for i in C + D})
+   
+def f3():
+    #Number of students who play neither cricket nor badminton
+    L1=[i for i in groupC if not i in groupA]
+    L2=[i for i in L1 if not i in list(groupB)]
+    print("Number of students who play neither cricket nor badminton",set(L2),len(L2))
+def f4():
+    #Number of students who play cricket and football but not badminton.
+    L3=[i for i in groupA if i in groupC]
+    L4=[i for i in L3 if not i in list(groupB)]
+
+    print("Number of students who play cricket and football but not badminton",set(L4),len(L4))
+    
+groupA=set()
+groupB=set()
+groupC=set()
+A=int(input("Enter Count of student for GroupA:"))
+for i in range(A):
+    name=input("Enter name:")
+    groupA.add(name)
+print(groupA)
+B=int(input("Enter Count of student for GroupB:"))
+for i in range(B):
+     name=input("Enter name:")
+     groupB.add(name)
+print(groupB)    
+C=int(input("Enter Count of student for GroupC:"))
+for i in range(C):
+     name=input("Enter name:")
+     groupC.add(name)
+print(groupC)
+while(1):
+    print("1:List of students who play both cricket and badminton\n2:List of students who play either cricket or badminton but not both \n3:Number of students who play neither cricket nor badminton\n4:Number of students who play cricket and football but not badminton")
+    c=int(input("Enter Choice:"))
+    if c==1:
+        f1()
+    elif c==2:
+        f2() 
+    elif c==3:
+        f3()
+    elif c==4:
+        f4()
+    else:
+        break
+        
